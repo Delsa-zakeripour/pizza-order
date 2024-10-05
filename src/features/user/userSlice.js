@@ -1,4 +1,4 @@
-/*
+
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getAddress } from "../../services/apiGeocoding";
@@ -55,33 +55,30 @@ const userSlice = createSlice({
         state.address = action.payload.address;
         state.status = "idle";
       })
-      .addCase(fetchAddress.rejected, (state) => {
+      .addCase(fetchAddress.rejected, (state) =>  {
         state.status = "error";
         state.error =
           "There was a problem getting your address. Make sure to fill this field!";
       }),
 });
 
-export const { updateName } = userSlice.actions;
 
-export default userSlice.reducer;
-*/
 
-import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  username: "",
-};
 
-const userSlice = createSlice({
-  name: "user",
-  initialState,
-  reducers: {
-    updateName(state, action) {
-      state.username = action.payload;
-    },
-  },
-});
+// const initialState = {
+//   username: "",
+// };
+
+// const userSlice = createSlice({
+//   name: "user",
+//   initialState,
+//   reducers: {
+//     updateName(state, action) {
+//       state.username = action.payload;
+//     },
+//   },
+// });
 
 export const { updateName } = userSlice.actions;
 
